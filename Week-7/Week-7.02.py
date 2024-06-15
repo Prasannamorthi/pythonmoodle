@@ -1,43 +1,69 @@
-Automorphic number or not
+Write a program to eliminate the common elements in the given 2 arrays and print only the non-repeating
 
-An automorphic number is a number whose square ends with the number itself. For example, 5 is an automorphic number because 5*5 =25. The last digit is 5 which same as the given number. 
-
-
-
-If the number is not valid, it should display “Invalid input”.
-
-If it is an automorphic number display “Automorphic” else display “Not Automorphic”.
-
-
+elements and the total number of such non-repeating elements.
 
 Input Format:
 
-Take a Integer from Stdin 
+The first line contains space-separated values, denoting the size of the two arrays in integer format respectively.
 
-Output Format: 
+The next two lines contain the space-separated integer arrays to be compared.
 
-Print Automorphic if given number is Automorphic number, otherwise Not Automorphic 
+Sample Input:
 
-Example input: 5 Output: Automorphic Example input: 25 Output: Automorphic Example input: 7 Output: Not Automorphic
+5 4
+
+1 2 8 6 5
+
+2 6 8 10
+
+Sample Output:
+
+1 5 10
+
+3
+
+Sample  Input: 
+
+5 5
+
+1 2 3 4 5
+
+1 2 3 4 5
+
+Sample Output:
+
+NO SUCH ELEMENTS
+
+
 
 For example:
 
-Test				Result
+Input	Result
+5 4
+1 2 8 6 5
+2 6 8 10
+1 5 10
+3
 
-print(automorphic(5))	Automorphic
 
+def find_non_repeating_elements(arr1, arr2):
+    set1 = set(arr1)
+    set2 = set(arr2)
+    unique_to_set1 = set1.difference(set2)
+    unique_to_set2 = set2.difference(set1)
+    non_repeating_elements = unique_to_set1.union(unique_to_set2)
+    
+    return non_repeating_elements
+size1, size2 = map(int, input().split())
+arr1 = list(map(int, input().split()))
+arr2 = list(map(int, input().split()))
 
+non_repeating_elements = find_non_repeating_elements(arr1, arr2)
+if non_repeating_elements:
+    print(' '.join(map(str, sorted(non_repeating_elements))))
+    print(len(non_repeating_elements))
+else:
+    print("NO SUCH ELEMENTS")
 
-def automorphic(n):
-
-    a=str(n*n)
-
-    if(int(a[-1])==n):
-
-        return("Automorphic")
-
-    else:
-
-        return("Not Automorphic")
 
   
