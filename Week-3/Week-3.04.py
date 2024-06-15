@@ -1,53 +1,31 @@
-IN/OUT
+Write a program that returns the second last digit of the given number. Second last digit is being referred 10the digit in the tens place in the given number.
 
-Ms. Sita, the faculty handling programming lab for you is very strict. Your seniors have told you that she will not allow you to enter the week's lab if you have not completed atleast half the number of problems given last week. Many of you didn't understand this statement and so they requested the good programmers from your batch to write a program to find whether a student will be allowed into a week's lab given the number of problems given last week and the number of problems solved by the student in that week.
+For example, if the given number is 197, the second last digit is 9.
 
- 
+Note1 - The second last digit should be returned as a positive number. i.e. if the given number is -197, the second last digit is 9.
 
-Input Format: 
-
-Input consists of 2 integers.
-
- The first integer corresponds to the number of problems given and the second integer corresponds to the number of problems solved.
-
- Output Format:
-
- Output consists of the string “IN” or “OUT”. 
-
- Sample Input and Output:
-
- Input
-
- 8
-
- 3
-
- Output
-
- OUT
+Note2 - If the given number is a single digit number, then the second last digit does not exist. In such cases, the program should return -1. i.e. if the given number is 5, the second last digit should be returned as -1
 
 
 
 For example:
 
 Input	Result
-
-8
-
-3	OUT
+197
+9
+5
+-1
 
 
 
 a=int(input())
 
-b=int(input())
-
-c=(a/2)
-
-if(c>b):
-
-    print("OUT")
-
+if(a<0):
+    a=a*-1
+if(a<10):
+    print("-1")
 else:
+    a=a//10
+    a=a%10
 
-    print("IN")
+    print(a)
