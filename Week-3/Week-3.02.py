@@ -1,50 +1,70 @@
-Classifying Triangles
+IN / OUT 
 
-A triangle can be classified based on the lengths of its sides as equilateral, isosceles or scalene. All three sides of an equilateral triangle have the same length. An isosceles triangle has two sides that are the same length, and a third side that is a different length. If all of the sides have different lengths then the triangle is scalene.
+ 
 
-Write a program that reads the lengths of the three sides of a triangle from the user. Then display a message that states the triangle’s type.
+Ms. Sita, the faculty handling programming lab for you is very strict. Your seniors have told you that she will not allow you to enter the week's lab if you have not completed atleast half the number of problems given last week. Many of you didn't understand this statement and so they requested the good programmers from your batch to write a program to find whether a student will be allowed into a week's lab given the number of problems given last week and the number of problems solved by the student in that week.
 
-Sample Input 1
+ 
 
-60
+Input Format:
 
-60
+ 
 
-60
+ 
 
-Sample Output 1
+Input consists of 2 integers.
 
-That's a equilateral triangle
+ 
 
+The first integer corresponds to the number of problems given and the second integer corresponds to the number of problems solved.
 
+ 
+
+ Output Format:
+
+ 
+
+ 
+
+Output consists of the string “IN” or “OUT”. 
+
+ 
+
+ Sample Input and Output:
+
+ 
+
+Input
+
+ 
+
+ 8
+
+ 
+
+ 3
+
+ 
+
+ Output
+
+ 
+
+OUT
 
 
 
 For example:
 
 Input	Result
-
-40
-
-40
-
-80	That's a isosceles triangle
+8
+3
+OUT
 
 a=int(input())
-
 b=int(input())
-
-c=int(input())
-
-if(a==b and b==c):
-
-    print("That's a equilateral triangle")
-
-elif(a!=b and b==c or a==b and b!=c):
-
-    print("That's a isosceles triangle")
-
-elif(a!=b and b!=c):
-
-    print("That's a scalene triangle")
+if(b>=(a//2)):
+    print("IN")
+else:
+    print("OUT")
 
