@@ -23,7 +23,6 @@ Modulo result: 1
 0
 Error: Cannot divide or modulo by zero.
 
-
 def perform_operations():
     try:
         num1 = float(input())
@@ -31,4 +30,16 @@ def perform_operations():
 
         division_result = num1 / num2
         modulo_result = num1 % num2
+
+        print("Division result:", division_result)
+        print("Modulo result:",int(modulo_result))
+
+    except ZeroDivisionError:
+        print("Error: Cannot divide or modulo by zero.")
+
+    except ValueError:
+        print("Error: Non-numeric input provided.")
+
+perform_operations()
+
 
