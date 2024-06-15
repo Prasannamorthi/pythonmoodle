@@ -1,88 +1,53 @@
-Remove repeated
+A sentence is a string of single-space separated words where each word consists only of lowercase letters.A word is uncommon if it appears exactly once in one of the sentences, and does not appear in the other sentence.
 
-Write a program to eliminate the common elements in the given 2 arrays and print only the non-repeating elements and the total number of such non-repeating elements.
+Given two sentences s1 and s2, return a list of all the uncommon words. You may return the answer in any order.
 
-Input Format:
+Example 1:
 
-The first line contains space-separated values, denoting the size of the two arrays in integer format respectively.
+Input: s1 = "this apple is sweet", s2 = "this apple is sour"
 
-The next two lines contain the space-separated integer arrays to be compared.
+Output: ["sweet","sour"]
 
-
-
-Sample Input:
-
-5 4
-
-1 2 8 6 5
-
-2 6 8 10
-
-Sample Output:
-
-1 5 10
-
-3
-
-Sample  Input: 
-
-5 5
-
-1 2 3 4 5
-
-1 2 3 4 5
-
-Sample Output:
-
-NO SUCH ELEMENTS
+Example 2:
 
 
 
+Input: s1 = "apple apple", s2 = "banana"
 
+Output: ["banana"]
 
+ Constraints:
+
+1 <= s1.length, s2.length <= 200
+
+s1 and s2 consist of lowercase English letters and spaces.
+
+s1 and s2 do not have leading or trailing spaces.
+
+All the words in s1 and s2 are separated by a single space.
+
+Note:
+
+Use dictionary to solve the problem
 
 
 For example:
 
 Input	Result
+this apple is sweet
+this apple is sour
+sweet sour
 
-5 4
-
-1 2 8 6 5
-
-2 6 8 10	1 5 10
-
-3
-
-a=input()
-
-d=[]
-
-b=input()
-
-c=input()
-
-b=tuple(b.split(" "))
-
-c=tuple(c.split(" "))
-
-for i in b:
-
-    if i not in c:
-
-        d.append(i)
-
-for i in c:
-
-    if i not in b:
-
-        d.append(i)
-
-for i in range(len(d)):
-
-    print(int(d[i]),end=' ')
-
-print()
-
-print(len(d))
+s1 = input()
+s2 = input()
+words = (s1 + " " + s2).split()
+c = {}
+for word in words:
+    if word in c:
+        c[word] += 1
+    else:
+        c[word] = 1
+u = [word for word, count in c.items() if count == 1]
+o = " ".join(u)
+print(o)
 
