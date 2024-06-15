@@ -1,35 +1,7 @@
-Next Perfect Square
-
-Given a number N, find the next perfect square greater than N.
-
-Input Format:
-
-Integer input from stdin.
-
-Output Format:
-
-Perfect square greater than N.
-
-Example Input:
-
-10
-
-Output:
-
-16
-
-
-
-a=int(input())
-
-c=[]
-
-for i in range(0,a):
-
-    b=i**2
-
-    if(b>a):
-
-        c.append(b)
-
-print(c[0])
+number=int(input())
+num_str = str(number)
+unique_digits = set()
+for digit in num_str:
+    unique_digits.add(digit)
+unique_digit_count = len(unique_digits)
+print(unique_digit_count)
