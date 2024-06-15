@@ -32,24 +32,12 @@ twenty
 
 
 
-
 try:
-
-    a=input()
-
-    if(len(a)==0):
-
+    age = int(input())
+    if age < 0:
         print("Error: Please enter a valid age.")
-
-    elif a.isnumeric():
-
-        print("You are",a,"years old.")
-
     else:
-
-        print("Error: Please enter a valid age.")
-
+        print("You are {} years old.".format(age))
 except:
-
     print("Error: Please enter a valid age.")
 
