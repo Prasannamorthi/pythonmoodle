@@ -5,56 +5,34 @@ Input Format: Two lines of input, each containing a number.
 Output Format: Print the result of the division or an error message if an exception occurs.
 
 
-
-
-
 For example:
 
 Input	Result
-
 10
-
-2	5.0
-
+2
+5.0
 10
-
-0	Error: Cannot divide or modulo by zero.
-
-
-
+0
+Error: Cannot divide or modulo by zero.
 ten
-
 5
+Error: Non-numeric input provided.
 
-	Error: Non-numeric input provided.
-
-
-
-def main():
-
+def safe_division():
     try:
-
         num1 = float(input())
-
         num2 = float(input())
 
-       
+        result = num1 / num2
 
-        division_result = num1 / num2
-
-        modulo_result = num1 % num2
-
-       
-
-        print(division_result)
-
-        
-
-    except ValueError:
-
-        print("Error: Non-numeric input provided.")
+        print(result)
 
     except ZeroDivisionError:
-
         print("Error: Cannot divide or modulo by zero.")
+
+    except ValueError:
+        print("Error: Non-numeric input provided.")
+
+safe_division()
+
 
