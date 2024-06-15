@@ -1,87 +1,63 @@
-Admission Eligibility
+Write a program to calculate and print the Electricity bill where the unit consumed by the user is given from test case. It prints the total amount the customer has to pay. The charge are as follows: 
 
-Write a program to find the eligibility of admission for a professional course based on the following criteria:
+Unit                                                     Charge / Unit
 
-Marks in Maths >= 65
+Upto 199                                             @1.20
 
-Marks in Physics >= 55
+200 and above but less than 400        @1.50
 
-Marks in Chemistry >= 50
+400 and above but less than 600        @1.80
 
-Or
+600 and above                                    @2.00
 
-Total in all three subjects >= 180
+If bill exceeds Rs.400 then a surcharge of 15% will be charged and the minimum bill should be of Rs.100/- 
 
 Sample Test Cases
 
-Test Case 1
+Test Case 1 
 
 Input
 
-70
+50 
 
-60
+Output
 
-80
+100.00 
+
+Test Case 2
+
+Input 
+
+300
 
 Output 
 
-The candidate is eligible
+517.50
 
-Test Case 2 
 
-Input
-
-50
-
-80
-
-80 
-
-Output
-
-The candidate is eligible
-
-Test Case 3
-
-Input
-
-50
-
-60
-
-40
-
-Output
-
-The candidate is not eligible
 
 For example:
 
 Input	Result
-
-50
-
-80
-
-80	The candidate is eligible
+100.00
+120.00
 
 
 
-a=int(input())
 
-b=int(input())
 
-c=int(input())
-
-if(a>=65 and b>=55 and c>=50):
-
-    print("The candidate is eligible")
-
-elif(a+b+c>=180):
-
-    print("The candidate is eligible")
-
+a=float(input())
+if(a<=199):
+    x=a*1.20
+elif(a>=200 and a<400):
+    x=a*1.50
+elif(a>=400 and a<600):
+    x=a*1.80
+elif(a>=600):
+    x=a*2.00
+if(x<100):
+    print("100.00")
+elif(x>400):
+    print(f"{(x*0.15)+x:.2f}")
 else:
-
-    print("The candidate is not eligible")
+    print(f"{x:.2f}")
