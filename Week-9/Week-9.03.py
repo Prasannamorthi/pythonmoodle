@@ -1,108 +1,62 @@
-Winner of Election
+An abundant number is a number for which the sum of its proper divisors is greater than
 
-Given an array of names of candidates in an election. A candidate name in the array represents a vote cast to the candidate. Print the name of candidates received Max vote. If there is tie, print a lexicographically smaller name.
+the number itself. Proper divisors of the number are those that are strictly lesser than the number.
 
-Examples: 
+Input Format:
 
-Input :  votes[] = {"john", "johnny", "jackie",
+Take input an integer from stdin
 
-                    "johnny", "john", "jackie",
+Output Format:
 
-                    "jamie", "jamie", "john",
+Return Yes if given number is Abundant. Otherwise, print No
 
-                    "johnny", "jamie", "johnny",
+Example input:
 
-                    "john"};
+12
 
-Output : John
+Output:
 
-We have four Candidates with name as 'John', 'Johnny', 'jamie', 'jackie'. The candidates John and Johny get maximum votes. Since John is alphabetically smaller, we print it. Use dictionary to solve the above problem
+Yes
 
- 
+Explanation
 
-Sample Input:
+The proper divisors of 12 are: 1, 2, 3, 4, 6, whose sum is 1 + 2 + 3 + 4 + 6 = 16. Since sum of
 
-10
+proper divisors is greater than the given number, 12 is an abundant number.
 
-John
+Example input:
 
-John
+13
 
-Johny
+Output:
 
-Jamie
+No
 
-Jamie
+Explanation
 
-Johny
+The proper divisors of 13 is: 1, whose sum is 1. Since sum of proper divisors is not greater
 
-Jack
-
-Johny
-
-Johny
-
-Jackie
-
- 
-
-Sample Output:
-
-Johny
-
- 
+than the given number, 13 is not an abundant number.
 
 
 
 For example:
 
-Input	Result
-
-10
-
-John
-
-John
-
-Johny
-
-Jamie
-
-Jamie
-
-Johny
-
-Jack
-
-Johny
-
-Johny
-
-Jackie	Johny
+Test	Result
+print(abundant(12))
+Yes
+print(abundant(13))
+No
 
 
+def abundant(n):
+    proper_divisors = [i for i in range(1, n) if n % i == 0]
 
-n = int(input())
+    sum_of_divisors = sum(proper_divisors)
 
-
-
-votes = {}
-
-
-
-for _ in range(n):
-
-    candidate = input()
-
-    votes[candidate] = votes.get(candidate, 0) + 1
-
-
-
-max_votes = max(votes.values())
-
-max_candidates = [candidate for candidate, count in votes.items() if count == max_votes]
-
-
-
-print(min(max_candidates))
+    if sum_of_divisors > n:
+        return "Yes"
+    else:
+        return "No"
+    
 
