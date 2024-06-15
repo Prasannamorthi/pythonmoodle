@@ -1,38 +1,40 @@
-Hamming Weight
+In the 1800s, the battle of Troy was led by Hercules. He was a superstitious person. He believed that his crew can win the battle only if the total count of the weapons in hand is in multiple of 3 and the soldiers are in an even number of count. Given the total number of weapons and the soldier's count, Find whether the battle can be won or not according to Hercules's belief. If the battle can be won print True otherwise print False.
 
-Write a python program that takes a integer between 0 and 15 as input and displays the number of '1' s in its binary form.(Hint:use python bitwise operator.
+Input format:
 
-Sample Input
+Line 1 has the total number of weapons
 
-3
+Line 2 has the total number of Soldiers.
 
-Sample Output:
+Output  Format:
 
-2
+If the battle can be won print True otherwise print False.
 
-Explanation:
+Sample Input:
 
-The binary representation of 3 is 011, hence there are 2 ones in it. so the output is 2.
+32
+
+43
+
+Sample Output:'
+
+False
+
+
+
+For example:
+
+Input	Result
+32
+43
+False
 
 
 
 a=int(input())
-
-n=bin(a)
-
-n=n.replace("0b","")
-
-s=str(n)
-
-c=list(s)
-
-d=0
-
-for i in range(len(c)):
-
-    if(int(c[i])==1):
-
-        d+=1
-
-print(d)
+b=int(input())
+if((a%3==0)&(b%2==0)):
+    print('True')
+else:
+    print('False')
 
