@@ -1,5 +1,3 @@
-Peak Element
-
 Given an list, find peak element in it. A peak element is an element that is greater than its neighbors.
 
 An element a[i] is a peak element if
@@ -13,16 +11,11 @@ A[i]>=A[i+1] for first element [i=0]
 Input Format
 
 The first line contains a single integer n , the length of A .
-
 The second line contains n space-separated integers,A[i].
-
-
 
 Output Format
 
 Print peak numbers separated by space.
-
-
 
 Sample Input
 
@@ -35,70 +28,19 @@ Sample Output
 10 6
 
 
-
-
-
-For example:
-
-Input	Result
-
-4
-
-12 3 6 8 	12 8
-
-
-
-def find_peak(arr):
-
-    peak_elements = []
-
-
-
-    # Check for the first element
-
-    if arr[0] >= arr[1]:
-
-        peak_elements.append(arr[0])
-
-
-
-    # Check for middle elements
-
-    for i in range(1, len(arr) - 1):
-
-        if arr[i - 1] <= arr[i] >= arr[i + 1]:
-
-            peak_elements.append(arr[i])
-
-
-
-    # Check for the last element
-
-    if arr[-1] >= arr[-2]:
-
-        peak_elements.append(arr[-1])
-
-
-
-    return peak_elements
-
-
-
-# Input the length of the list
-
+def find_and_print_peak_elements(n, arr):
+    if n == 1:
+        print(arr[0])
+    else:
+        if arr[0] >= arr[1]:
+            print(arr[0], end=" ")
+        for i in range(1, n - 1):
+            if arr[i - 1] <= arr[i] >= arr[i + 1]:
+                print(arr[i], end=" ")
+        if arr[n - 1] >= arr[n - 2]:
+            print(arr[n - 1], end=" ")
 n = int(input())
-
-
-
-# Input the list of integers
-
 arr = list(map(int, input().split()))
+find_and_print_peak_elements(n, arr)
 
-
-
-# Find peak elements and print the result
-
-peak_elements = find_peak(arr)
-
-print(*peak_elements)
 
