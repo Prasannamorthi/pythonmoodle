@@ -1,29 +1,28 @@
-Frequency of Elements
+An list contains N numbers and you want to determine whether two of the numbers sum to a given number K. For example, if the input is 8, 4, 1, 6 and K is 10, the answer is yes (4 and 6). A number may be used twice.
 
-To find the frequency of numbers in a list and display in sorted order.
+Input Format
 
-Constraints: 
+The first line contains a single integer n , the length of list
 
-1<=n, arr[i]<=100 
+The second line contains n space-separated integers, list[i].
 
-Input: 
+The third line contains integer k.
 
-1 68 79 4 90 68 1 4 5 
+Output Format
 
-output:
+Print Yes or No.
 
- 1 2
+Sample Input
 
- 4 2
+7
 
- 5 1
+0 1 2 4 6 5 3 
 
- 68 2
+1 
 
- 79 1 
+Sample Output
 
-90 1
-
+Yes
 
 
 
@@ -31,52 +30,29 @@ output:
 For example:
 
 Input	Result
-
-4 3 5 3 4 5	3 2
-
-4 2
-
-5 2
-
-
-
-
-
-def count_frequency(arr):
-
-    frequency = {}
-
-    
-
-    # Count the frequency of each number in the list
-
-    for num in arr:
-
-        frequency[num] = frequency.get(num, 0) + 1
-
-    
-
-    # Sort the dictionary based on keys
-
-    sorted_frequency = sorted(frequency.items())
-
-    
-
-    # Print the frequency of each number
-
-    for num, freq in sorted_frequency:
-
-        print(num, freq)
+5
+8 9 12 15 3
+11
+Yes
+6
+2 9 21 32 43 43 1
+4
+No
 
 
 
-# Input the list of numbers
 
-arr = list(map(int, input().split()))
-
-
-
-# Count the frequency and print the result
-
-count_frequency(arr)
+neil=int(input())
+a = list(map(int, input().split()))
+key=int(input())
+fg=0
+for i in range(neil):
+    for j in range(0,neil):
+        if(a[i]!=a[j]):
+            if(a[i]+a[j]==key):
+                fg+=1
+if(fg==0):
+    print("No")
+else:
+    print("Yes")
 
