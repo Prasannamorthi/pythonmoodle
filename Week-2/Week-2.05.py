@@ -1,32 +1,43 @@
-Compound Interest
+Mr.Ram has been given a problem kindly help him to solve it. The input of the program is either 0 or 1. IF 0 is the input he should display "C" if 1 is the input it should display "D".There is a constraint that Mr. Ram should use either logical operators or arithmetic operators to solve the problem, not anything else.
 
-Pretend that you have just opened a new savings account that earns 4 percent interest per year. The interest that you earn is paid at the end of the year, and is added to the balance of the savings account. Write a program that begins by reading the amount of money deposited into the account from the user. Then your program should compute and display the amount in the savings account after 1, 2, and 3 years. Display each amount so that it is rounded to 2 decimal places.
+Hint:
 
-Sample Input:
+Use ASCII values of C and D.
 
-10000
+Input Format:
 
-Sample Output:
+An integer x, 0<=x<=1. .
 
-Balance as of end of Year 1: $10400.00.
+Output Format:
 
-Balance as of end of Year 2: $10816.00.
+output a single character "C" or "D"depending on the value of x.
 
-Balance as of end of Year 3: $11248.64
+Input 1:
+0
+Output 1:
+C
 
+
+Input 2:
+1
+
+Output 1:
+D
+
+
+
+
+
+For example:
+
+Input	Result
+0
+C
 
 
 a=int(input())
-
-b=(a*0.04)+a
-
-c=b+(b*0.04)
-
-d=c+(c*0.04)
-
-print("Balance as of end of Year 1: ${:.2f}.".format(b))
-
-print("Balance as of end of Year 2: ${:.2f}.".format(c))
-
-print("Balance as of end of Year 3: ${:.2f}.".format(d))
+if(a==0):
+    print("C")
+if(a==1):
+    print("D")
 
