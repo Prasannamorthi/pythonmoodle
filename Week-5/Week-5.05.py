@@ -1,152 +1,37 @@
-Element Insertion
+In this exercise, you will create a program that reads words from the user until the user enters a blank line. After the user enters a blank line your program should display each word entered by the user exactly once. The words should be displayed in the same order that they were first entered. For example, if the user enters:
 
-Consider a program to insert an element / item in the sorted array. Complete the logic by filling up required code in editable section. Consider an array of size 10. The eleventh item is the data is to be inserted. 
+first
 
-Sample Test Cases
+second
 
-Test Case 1
+first
 
-Input
+third
 
-1
+second
 
-3
+then your program should display:
 
-4
+first
 
-5
+second
 
-6
+third
 
-7
 
-8
 
-9
 
-10
 
-11
 
-2
-
-
-
-Output
-
-ITEM to be inserted:2
-
-After insertion array is:
-
-1
-
-2
-
-3
-
-4
-
-5
-
-6
-
-7
-
-8
-
-9
-
-10
-
-11
-
- 
-
-
-
-
-
-Test Case 2
-
-Input
-
-11
-
-22
-
-33
-
-55
-
-66
-
-77
-
-88
-
-99
-
-110
-
-120
-
-44
-
- 
-
-Output
-
- 
-
-ITEM to be inserted:44
-
-After insertion array is:
-
-11
-
-22
-
-33
-
-44
-
-55
-
-66
-
-77
-
-88
-
-99
-
-110
-
-120
-
-
-
-
-
-def insert_sorted(list, n):
-
-    list.append(n)
-
-    sorted_list = sorted(list)
-
-    print("After insertion array is:")
-
-    for i in range(11):
-
-        print(sorted_list[i])
-
- 
-
-sorted_list = [int(input()) for i in range(10)]
-
-new_element = int(input())
-
-print("ITEM to be inserted:", new_element, sep='')
-
-insert_sorted(sorted_list, new_element)
+unique_words = set()
+ordered_words = []
+while True:
+    word = input().strip()
+    if not word:
+        break
+    if word not in unique_words:
+        unique_words.add(word)
+        ordered_words.append(word)
+for word in ordered_words:
+    print(word)
 
