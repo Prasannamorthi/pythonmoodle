@@ -1,43 +1,26 @@
-Merge Sort
-
-Write a Python program to sort a list of elements using the merge sort algorithm.
-
-
+Write a Python program for binary search.
 
 For example:
 
 Input	Result
-
-5
-
-6 5 4 3 8
-
-	3 4 5 6 8
-
-
+1,2,3,5,8
+6
+False
+3,5,9,45,42
+42
+True
 
 
 
-a=int(input())
-
-l=[]
-
-l.extend(input().split())
-
-for i in range(a-1):
-
-    for j in range(a-1):
-
-        if(int(l[j])>int(l[j+1])):
-
-            t=int(l[j])
-
-            l[j]=int(l[j+1])
-
-            l[j+1]=t
-
-for i in range(a):
-
-    print(int(l[i]),end=" ")
+arr = list(map(int, input().split(',')))
+key = int(input())
+fg=0
+for i in range(len(arr)):
+    if arr[i] == key:
+        fg+=1
+if(fg):
+    print("True")
+else:
+    print("False")
 
 
