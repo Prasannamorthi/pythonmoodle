@@ -1,6 +1,6 @@
 Problem Description:
 
-Develop a Python program that safely calculates the square root of a number provided by the user. Handle exceptions for negative inputs and non-numeric inputs.
+Write a Python script that asks the user to enter a number within a specified range (e.g., 1 to 100). Handle exceptions for invalid inputs and out-of-range numbers.
 
 Input Format:
 
@@ -8,31 +8,30 @@ User inputs a number.
 
 Output Format:
 
-Print the square root of the number or an error message if an exception occurs.
+Confirm the input or print an error message if it's invalid or out of range.
 
 For example:
 
 Input	Result
+1
+Valid input.
+101
+Error: Number out of allowed range
+rec
+Error: invalid literal for int()
 
-16	The square root of 16.0 is 4.00
+def check_number():
+    try:
+        number = int(input(""))
 
--4	Error: Cannot calculate the square root of a negative number.
+        if number < 1 or number > 100:
+            print("Error: Number out of allowed range")
+        else:
+            print("Valid input.")
 
-rec	Error: could not convert string to float
+    except ValueError:
+        print("Error: invalid literal for int()")
 
-try:
+check_number()
 
-    a=float(input())
-
-    if(a<0):
-
-        print("Error: Cannot calculate the square root of a negative number.")
-
-    else:
-
-        print("The square root of",a,"is {:.2f}".format(a**0.5))
-
-except:
-
-    print("Error: could not convert string to float")
 
