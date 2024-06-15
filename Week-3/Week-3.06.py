@@ -1,42 +1,64 @@
-Leap Year
+A triangle can be classified based on the lengths of its sides as equilateral, isosceles or scalene. All three sides of an equilateral triangle have the same length. An isosceles triangle has two sides that are the same length, and a third side that is a different length. If all of the sides have different lengths then the triangle is scalene.
 
-Most years have 365 days. However, the time required for the Earth to orbit the Sun is actually slightly more than that. As a result, an extra day, February 29, is included in some years to correct for this difference. Such years are referred to as leap years. The rules for determining whether or not a year is a leap year follow:
-
-• Any year that is divisible by 400 is a leap year.
-
-• Of the remaining years, any year that is divisible by 100 is not a leap year.
-
-• Of the remaining years, any year that is divisible by 4 is a leap year.
-
-• All other years are not leap years.
-
-Write a program that reads a year from the user and displays a message indicating whether or not it is a leap year.
+Write a program that reads the lengths of the three sides of a triangle from the user. Then display a message that states the triangle’s type.
 
 Sample Input 1
 
-1900
+60
+
+60
+
+60
 
 Sample Output 1
 
-1900 is not a leap year.
+That's a equilateral triangle
 
 Sample Input 2
 
-2000
+40
+
+40
+
+80
 
 Sample Output 2
 
-2000 is a leap year.
+That's a isosceles triangle
+
+Sample Input 3
+
+50
+
+60
+
+70
+
+Sample Output 3
+
+That's a scalene triangle
 
 
+For example:
 
-year=int(input())
+Input	Result
+60
+60
+60
+That's a equilateral triangle
+40
+40
+80
+That's a isosceles triangle
 
-if(year%400==0):
 
-    print(year,"is a leap year.")
-
+a=int(input())
+b=int(input())
+c=int(input())
+if(a==b and b==c):
+    print("That's a equilateral triangle")
+elif(a==b or b==c or c==a):
+    print("That's a isosceles triangle")
 else:
-
-    print(year,"is not a leap year.")
+    print("That's a scalene triangle")
 
