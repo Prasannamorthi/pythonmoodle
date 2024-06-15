@@ -1,102 +1,56 @@
-Sort Dictionary by Values Summation
+Write a code to check whether product of digits at even places is divisible by sum of digits
 
-Give a dictionary with value lists, sort the keys by summation of values in value list.
+at odd place of a positive integer.
 
- Input : test_dict = {‘Gfg’ : [6, 7, 4], ‘best’ : [7, 6, 5]}
+Input Format:
 
-Output : {‘Gfg’: 17, ‘best’: 18}
+Take an input integer from stdin.
 
-Explanation : Sorted by sum, and replaced.
+Output Format:
 
- Input : test_dict = {‘Gfg’ : [8,8], ‘best’ : [5,5]}
+Print TRUE or FALSE.
 
-Output : {‘best’: 10, ‘Gfg’: 16}
+Example Input:
 
-Explanation : Sorted by sum, and replaced.
+1256
 
- Sample Input:
+Output:
 
-2
+TRUE
 
-Gfg 6 7 4
+Example Input:
 
-Best 7 6 5
+1595
 
-Sample Output
+Output:
 
-Gfg 17
-
-Best 18
-
- 
-
-
-
-
+FALSE
 
 For example:
 
-Input	Result
-
-2
-
-Gfg 6 7 4
-
-Best 7 6 5	Gfg 17
-
-Best 18
+Test	Result
+print(productDigits(1256))
+True
+print(productDigits(1595))
+False
 
 
 
-a=int(input())
-
-d={}
-
-for i in range(a):
-
-    b=input()
-
-    b=b.partition(" ")
-
-    d[b[0]]=b[-1].split(" ")
-
-n=list(d.values())
-
-k=list(d.keys())
-
-for i in range(len(n)):
-
-    s=0
-
-    for j in range(len(n[i])):
-
-        s+=int(n[i][j])
-
-    d.update({k[i]:s})
-
-l=list(d.items())
-
-if(l[0][1]<l[1][1]):
-
-    for k,v in d.items():
-
-        print(k,v)
-
-else:
-
-    j=1
-
-    for k,v in d.items():
-
-        if(j==1):
-
-            k1,v1=k,v
-
-            j+=1
-
+def productDigits(number):
+    number_str = str(number)
+    product_even_positions = 1
+    sum_odd_positions = 0
+    
+    for i, digit in enumerate(number_str, start=1):
+        digit = int(digit)
+        if i % 2 == 1:
+            sum_odd_positions += digit
         else:
+            product_even_positions *= digit
 
-            print(k,v)
+    if sum_odd_positions == 0:
+        return False
 
-    print(k1,v1)
+    return product_even_positions % sum_odd_positions == 0
+    
 
