@@ -28,15 +28,11 @@ Input	Result
 
 
 
-a=int(input())
-
-b=int(input())
-
-c=a*0.1
-
-d=b*0.25
-
-e=c+d
-
-print("Your total refund will be ${:.2f}.".format(e))
-
+x=int(input())
+y=int(input())
+z=x*0.10
+a=y*0.25
+b=z+a
+print("Your total refund will be $",end='')
+print("{:.2f}".format(b),end='')
+print('.')
