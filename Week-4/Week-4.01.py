@@ -1,24 +1,10 @@
-Factors of a number
-
-Determine the factors of a number (i.e., all positive integer values that evenly divide into a number).
-
-For example:
-
-Input	Result	
-
-20	1 2 4 5 10 20	
-
-k=int(input())
-
-l=[]
-
-for i in range(1,k+1):
-
-    if(k%i==0):
-
-        l.append(i)
-
-for j in l:
-
-    print(j,end=' ')
-
+num=int(input())
+if num>1:
+    for i in range(2,num):
+        if(num%i)==0:
+            print(1)
+            break
+    else:
+            print(2)
+else:
+    print(1)
