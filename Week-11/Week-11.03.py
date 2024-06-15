@@ -1,48 +1,34 @@
-Problem Description:
-
-Write a Python script that asks the user to enter a number within a specified range (e.g., 1 to 100). Handle exceptions for invalid inputs and out-of-range numbers.
+Write a Python program that performs division and modulo operations on two numbers provided by the user. Handle division by zero and non-numeric inputs.
 
 Input Format:
 
-User inputs a number.
+Two lines of input, each containing a number.
 
 Output Format:
 
-Confirm the input or print an error message if it's invalid or out of range.
+Print the result of division and modulo operation, or an error message if an exception occurs.
 
 For example:
 
 Input	Result
-
-1	Valid input.
-
-101	Error: Number out of allowed range
-
-rec	Error: invalid literal for int()
-
-
-
-def main():
-
-    min_range = 1
-
-    max_range = 100
+10
+2
+Division result: 5.0
+Modulo result: 0
+7
+3
+Division result: 2.3333333333333335
+Modulo result: 1
+8
+0
+Error: Cannot divide or modulo by zero.
 
 
-
+def perform_operations():
     try:
+        num1 = float(input())
+        num2 = float(input())
 
-        num = int(input())
-
-        if num < min_range or num > max_range:
-
-            print("Error: Number out of allowed range")
-
-        else:
-
-            print("Valid input.")
-
-    except ValueError:
-
-        print("Error: invalid literal for int()")
+        division_result = num1 / num2
+        modulo_result = num1 % num2
 
