@@ -1,56 +1,10 @@
-Product of single digit
-
-Given a positive integer N, check whether it can be represented as a product of single digit numbers.
-
-Input Format:
-
-Single Integer input.
-
-Output Format:
-
-Output displays Yes if condition satisfies else prints No.
-
-Example Input:
-
-14
-
-Output:
-
-Yes
-
-Example Input:
-
-13
-
-Output:
-
-No
-
-
-
-
-
-a=int(input())
-
-flag=0
-
-for i in range(10):
-
-    for j in range(10):
-
-        if(i*j==a):
-
-            flag=1
-
-            break
-
-if(flag==1):
-
-    print("Yes")
-
-else:
-
-    print("No")
-
+number=int(input())
+num_str=str(number)
+non_repeated_digits=[]
+for digit in num_str:
+    if num_str.count(digit)==1:
+        non_repeated_digits.append(int(digit))
+non_repeated_count =len(non_repeated_digits)
+print(non_repeated_count)
 
 
