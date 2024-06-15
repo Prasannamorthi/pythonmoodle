@@ -1,78 +1,34 @@
-Merge List
-
-Write a Python program to Zip two given lists of lists.
-
-
-
-Input:
-
-m : row size
-
-n: column size
-
-list1 and list 2 :  Two lists
-
-Output
-
-Zipped List : List which combined both list1 and list2
-
-
-
-Sample test case
-
-
-
-Sample input
-
-2
-
-2
-
-1 
-
-3
-
-5
-
-7
-
-2
-
-4
-
-6
-
-8
-
-
-
-Sample Output
-
-
-
-[[1, 3, 2, 4], [5, 7, 6, 8]]
-
-
-
-def zip_lists(list1, list2):
-
-    return [row1 + row2 for row1, row2 in zip(list1, list2)]
+String should contain only the words are not palindrome.
 
  
 
-def main():
-
-    m = int(input())
-
-    n = int(input())
+Sample Input 1
 
  
 
+Malayalam is my mother tongue
+
  
 
-    list1 = [[int(input()) for _ in range(n)] for _ in range(m)]
+Sample Output 1
 
-    list2 = [[int(input()) for _ in range(n)] for _ in range(m)]
+ 
+
+is my mother tongue
+
+
+a=input()
+a=a.lower()
+b=a.split()
+l1=[]
+for i in b:
+    s=i[::-1]
+    if(s==i):
+        continue
+    else:
+        l1.append(i)
+for i in l1:
+    print(i,end=' ')
 
  
 
