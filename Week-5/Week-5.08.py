@@ -30,8 +30,6 @@ AbCdEfF
 -1
 1
 
-
-
 def compare_strings_lexicographically():
     T = int(input())  # Number of test cases
     for _ in range(T):
