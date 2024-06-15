@@ -41,88 +41,42 @@ Marks will be non-negative integers.
 For example:
 
 Input	Result
-
 3
-
 ID NAME MARKS CLASS
-
 101 John 78 Science
-
 102 Doe 85 Math
-
-103 Smith 90 History	84.33
-
+103 Smith 90 History
+84.33
 3
-
 MARKS CLASS NAME ID
-
 78 Science John 101
-
 85 Math Doe 102
-
-90 History Smith 103	84.33
-
-def calculate_average_marks(data):
-
+90 History Smith 103
+84.33
+def calculate_average_marks(N, column_names, student_data):
+    marks_index = column_names.index("MARKS")
     total_marks = 0
+    valid_students_count = 0
+   
+    for student in student_data:
+        if len(student) > marks_index and student[marks_index].isdigit():
+            total_marks += int(student[marks_index])
+            valid_students_count += 1
+           
+    if valid_students_count == 0:
+        return 0  # No valid students with marks found
+   
+    average_marks = total_marks / valid_students_count
+    return average_marks
 
-    num_students = 0
-
-    
-
-    for student in data:
-
-        if 'MARKS' in student:
-
-            total_marks += int(student['MARKS'])
-
-            num_students += 1
-
-    
-
-    if num_students == 0:
-
-        return 0
-
-    
-
-    return total_marks / num_students
-
-
-
-# Read input
-
-N = int(input())
-
-columns = input().split()
-
-
-
-# Initialize data structure to store student records
-
-students = []
-
-
-
-# Read student data
-
-for _ in range(N):
-
-    student_data = input().split()
-
-    student_record = {columns[i]: student_data[i] for i in range(len(columns))}
-
-    students.append(student_record)
-
-
-
-# Calculate average marks
-
-average_marks = calculate_average_marks(students)
-
-
-
-# Print average marks with two decimal places
-
-print("{:.2f}".format(average_marks))
+if __name__ == "__main__":
+    N = int(input())
+    column_names = input().split()
+    student_data = []
+    for _ in range(N):
+        student_info = input().split()
+        student_data.append(student_info)
+   
+    average_marks = calculate_average_marks(N, column_names, student_data)
+    print("{:.2f}".format(average_marks))
 
