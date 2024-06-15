@@ -1,48 +1,41 @@
 Problem Description:
 
-Write a Python program that asks the user for their age and prints a message based on the age. Ensure that the program handles cases where the input is not a valid integer.
-
-
+Develop a Python program that safely calculates the square root of a number provided by the user. Handle exceptions for negative inputs and non-numeric inputs.
 
 Input Format:
 
-A single line input representing the user's age.
-
-
+User inputs a number.
 
 Output Format:
 
-Print a message based on the age or an error if the input is invalid.
+Print the square root of the number or an error message if an exception occurs.
 
 For example:
 
 Input	Result
+16
+The square root of 16.0 is 4.00
+-4
+Error: Cannot calculate the square root of a negative number.
+rec
+Error: could not convert string to float
 
-25	You are 25 years old.
 
-rec	Error: Please enter a valid age.
+import math
 
--5	Error: Please enter a valid age.
+def calculate_square_root():
+    try:
+        number = float(input(""))
 
+        if number < 0:
+            print("Error: Cannot calculate the square root of a negative number.")
+        else:
+            square_root = math.sqrt(number)
+            print("The square root of", number, "is {:.2f}".format(square_root))
 
+    except ValueError:
+        print("Error: could not convert string to float")
 
-try:
+calculate_square_root()
 
-    a=input()
-
-    if(len(a)==0):
-
-        print("Error: Please enter a valid age.")
-
-    elif a.isnumeric():
-
-        print("You are",a,"years old.")
-
-    else:
-
-        print("Error: Please enter a valid age.")
-
-except:
-
-    print("Error: Please enter a valid age.")
 
