@@ -1,95 +1,73 @@
-As a software engineer at SocialLink, a leading social networking application, you are tasked with developing a new feature designed to enhance user interaction and engagement. The company aims to introduce a system where users can form connections based on shared interests and activities. One of the feature's components involves analyzing pairs of users based on the activities they've participated in, specifically looking at the numerical difference in the number of activities each user has participated in.
+Background:
 
-Your task is to write an algorithm that counts the number of unique pairs of users who have a specific absolute difference in the number of activities they have participated in. This algorithm will serve as the backbone for a larger feature that recommends user connections based on shared participation patterns.
-
-Problem Statement
-
-Given an array activities representing the number of activities each user has participated in and an integer k, your job is to return the number of unique pairs (i, j) where activities[i] - activities[j] = k, and i < j. The absolute difference between the activities should be exactly k.
-
-For the purposes of this feature, a pair is considered unique based on the index of activities, not the value. That is, if there are two users with the same number of activities, they are considered distinct entities.
-
-Input Format
-
-The first line contains an integer, n, the size of the array nums.
-
-The second line contains n space-separated integers, nums[i].
-
-The third line contains an integer, k.
+Rose manages a personal library with a diverse collection of books. To streamline her library management, she needs a program that can categorize books based on their genres, making it easier to find and organize her collection.
 
 
 
+Problem Statement:
 
-
-Output Format
-
-Return a single integer representing the number of unique pairs (i, j) 
-
-where | nums[i] - nums[j] | = k and i < j.
+Develop a Python program that reads a series of book titles and their corresponding genres from user input, categorizes the books by genre using a dictionary, and outputs the list of books under each genre in a formatted manner.
 
 
 
+Input Format:
 
+
+
+The input will be provided in lines where each line contains a book title and its genre separated by a comma.
+
+Input terminates with a blank line.
+
+Output Format:
+
+
+
+For each genre, output the genre name followed by a colon and a list of book titles in that genre, separated by commas.
 
 Constraints:
 
-1 ≤ n ≤ 105
-
--104 ≤ nums[i] ≤ 104
-
-0 ≤ k ≤ 104
 
 
+Book titles and genres are strings.
 
+Book titles can vary in length but will not exceed 100 characters.
 
+Genres will not exceed 50 characters.
 
-
+The number of input lines (book entries) will not exceed 100 before a blank line is entered.
 
 For example:
 
 Input	Result
+Introduction to Programming, Programming
+Advanced Calculus, Mathematics
+Programming: Introduction to Programming
+Mathematics: Advanced Calculus
+Fictional Reality, Fiction
+Another World, Fiction
 
-5
+def categorize_books():
+    import sys
+    from collections import OrderedDict
 
-1 3 1 5 4
+    input = sys.stdin.read
 
-0	1
+    data = input().strip().split('\n')
+    books_by_genre = OrderedDict()
 
-4
+    for line in data:
+        if line.strip() == "":
+            continue
+        title, genre = map(str.strip, line.split(",", 1))
+       
+        if genre not in books_by_genre:
+            books_by_genre[genre] = []
+        books_by_genre[genre].append(title)
+   
+    for genre in books_by_genre:
+        print(f"{genre}: {', '.join(books_by_genre[genre])}")
 
-1 2 2 1
-
-1	4
-
-def count_pairs_with_difference_k(activities, k):
-
-    count = 0
-
-    n = len(activities)
-
-    for i in range(n):
-
-        for j in range(i + 1, n):
-
-            if abs(activities[i] - activities[j]) == k:
-
-                count += 1
-
-    return count
-
-
-
-# Reading input
-
-n = int(input())
-
-activities = list(map(int, input().split()))
-
-k = int(input())
-
-
-
-# Calling function and printing the result
-
-print(count_pairs_)
+# Call the function to categorize books and print the output
+categorize_books()
 
 
