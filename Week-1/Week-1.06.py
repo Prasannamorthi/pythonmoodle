@@ -45,12 +45,13 @@ weekend 0.38
 
 
 
+x=int(input())
+y=int(input())
+z=x*0.10
+a=y*0.25
+b=z+a
+print("Your total refund will be $",end='')
+print("{:.2f}".format(b),end='')
+print('.')
 
-	s=int(input())
-
-	a=(500-s)/130
-
-	print("weekdays {:.2f}".format(abs(a)+10))
-
-	print("weekend {:.2f}".format(abs(a)))
 
