@@ -1,58 +1,36 @@
-Pythagorean triple
+Most years have 365 days. However, the time required for the Earth to orbit the Sun is actually slightly more than that. As a result, an extra day, February 29, is included in some years to correct for this difference. Such years are referred to as leap years. The rules for determining whether or not a year is a leap year follow:
 
-Three numbers form a Pythagorean triple if the sum of squares of two numbers is equal to the square of the third.
+• Any year that is divisible by 400 is a leap year.
 
-For example, 3, 5 and 4 form a Pythagorean triple, since 3*3 + 4*4 = 25 = 5*5 
+• Of the remaining years, any year that is divisible by 100 is not a leap year.
 
-You are given three integers, a, b, and c. They need not be given in increasing order. If they form a Pythagorean triple, then print "Yes", otherwise, print "No". 
+• Of the remaining years, any year that is divisible by 4 is a leap year.
 
-Sample Input
+• All other years are not leap years.
 
-3
+Write a program that reads a year from the user and displays a message indicating whether or not it is a leap year.
 
-5
+Sample Input 1
 
-4
+1900
 
-Sample Output
+Sample Output 1
 
-Yes
+1900 is not a leap year.
 
+Sample Input 2
 
+2000
 
-For example:
+Sample Output 2
 
-Input	Result
-
-3
-
-4
-
-5	Yes
-
-
+2000 is a leap year.
 
 
 
 a=int(input())
-
-b=int(input())
-
-c=int(input())
-
-if(a*a+b*b==c*c):
-
-    print("yes")
-
-elif(a*a+c*c==b*b):
-
-    print("yes")
-
-elif(c*c+b*b==a*a):
-
-    print("yes")
-
+if((a%4==0 and a%100!=0) or a%400==0):
+    print(a,"is a leap year.")
 else:
-
-    print("no")
+    print(a,'is not a leap year.')
 
