@@ -1,84 +1,44 @@
-Electricity Bill
+The length of a month varies from 28 to 31 days. In this exercise you will create a program that reads the name of a month from the user as a string. Then your program should display the number of days in that month. Display “28 or 29 days” for February so that leap years are addressed.
 
-Write a program to calculate and print the Electricity bill where the unit consumed by the user is given from test case. It prints the total amount the customer has to pay. The charge are as follows: 
+Sample Input 1
 
-Unit                                                     Charge / Unit
+February
 
-Upto 199                                             @1.20
+Sample Output 1
 
-200 and above but less than 400        @1.50
+February has 28 or 29 days in it.
 
-400 and above but less than 600        @1.80
+Sample Input 2
 
-600 and above                                    @2.00
+March
 
-If bill exceeds Rs.400 then a surcharge of 15% will be charged and the minimum bill should be of Rs.100/- 
+Sample Output 2
 
-Sample Test Cases
+March has 31 days in it.
 
-Test Case 1 
+Sample Input 3
 
-Input
+April
 
-50 
+Sample Output 3
 
-Output
-
-100.00 
-
-Test Case 2
-
-Input 
-
-300
-
-Output 
-
-517.50
-
-
+April has 30 days in it.
 
 
 
 For example:
 
 Input	Result
+February
+February has 28 or 29 days in it
 
-500	1035.00
 
-
-
-a=float(input())
-
-b=0
-
-if(a<=199):
-
-    b=a*1.2
-
-elif(200<=a<400):
-
-    b=a*1.5
-
-elif(400<=a<600):
-
-    b=a*1.8
-
-elif(a>600):
-
-    b=a*2.0
-
-if (int(b)<100):
-
-    print("{:.2f}".format(100))
-
-else:
-
-    if(b>400.00):
-
-        print("{:.2f}".format((b+(b*0.15))))
-
-    else:
-
-        print("{:.2f}".format(b))
+l=[30,31]
+a=input()
+if(a=='January' or a=='March' or a=='May' or a=='July' or a=='August' or a=='October' or a=='December'):
+    print(a,'has',l[1],'days in it.')
+elif(a=='April' or a=='June' or a=='September' or a=='November'):
+    print(a,'has',l[0],'days in it.')
+if(a=='February'):
+    print(a,'has 28 or 29 days in it.')
 
