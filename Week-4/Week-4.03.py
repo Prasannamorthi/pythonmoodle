@@ -1,45 +1,16 @@
-Prime Checking
-
-Write a program that finds whether the given number N is Prime or not. If the number is prime, the program should return 2 else it must return 1.
-
-Assumption: 2 <= N <=5000, where N is the given number.
-
-Example1: if the given number N is 7, the method must return 2
-
-Example2: if the given number N is 10, the method must return 1
-
-
-
-For example:
-
-Input	Result
-
-7	2
-
-10	1
-
-
-
 a=int(input())
-
-for i in range(2,a):
-
-    if(a%2==0):
-
-        flag=0
-
-    elif(a%i!=0):
-
-        flag=1
-
+sum=a+1
+d=0
+k=-1
+for i in range (0,a):
+    if (k==1):
+        break
+    d=i*i
+    if(d==sum):
+        k=1
     else:
-
-        flag=0
-
-if(flag==1):
-
-    print("2")
-
-elif(flag==0):
-
-    print("1")
+        k=0
+if ( k==1):
+    print("Yes")
+else:
+    print("No")
