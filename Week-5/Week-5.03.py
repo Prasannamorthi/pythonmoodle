@@ -1,78 +1,33 @@
-Count Elements
+Write a program that takes as input a string (sentence), and returns its second word in uppercase.
 
-Complete the program to count frequency of each element of an array. Frequency of a particular element will be printed once.
+For example:
 
-Sample Test Cases
+If input is “Wipro Technologies Bangalore” the function should return “TECHNOLOGIES”
 
- Test Case 1
+If input is “Hello World” the function should return “WORLD”
 
- Input
+If input is “Hello” the program should return “LESS”
 
- 7
+NOTE 1: If input is a sentence with less than 2 words, the program should return the word “LESS”.
 
-23
+NOTE 2: The result should have no leading or trailing spaces.
 
-45
 
-23
+For example:
 
-56
-
-45
-
-23
-
-40
-
- Output
-
- 23 occurs 3 times
-
-45 occurs 2 times
-
-56 occurs 1 times
-
-40 occurs 1 times
+Input	Result
+Wipro Technologies Bangalore
+TECHNOLOGIES
+Hello World
+WORLD
+Hello
+LESS
 
  
-
-import collections 
-
-def CountFrequency(arr):
-
-	return collections.Counter(arr)
-
- 
-
-if __name__ == "__main__":
-
-	# Input size of array
-
-	n = int(input())
-
-	
-
-	# Input elements in array
-
-	arr = []
-
-	for _ in range(n):
-
-    	ele = int(input())
-
-    	arr.append(ele)
-
-	
-
-	# Calculate frequency of each element
-
-	freq = CountFrequency(arr)
-
- 
-
- 
-
-	for key, value in freq.items():
-
-    	print(f"{key} occurs {value} times")
+a=input()
+b=a.split()
+if(len(b)==1):
+    print("LESS")
+else:
+    print(b[1].upper())
 
