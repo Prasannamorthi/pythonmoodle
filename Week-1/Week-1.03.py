@@ -21,12 +21,11 @@ Input	Result
 14.00	3.742
 
 
-
 import math
-
 a=float(input())
-
-s=math.sqrt(a)
-
-print("{:.3f}".format(s))
+if math.sqrt(a)%2==0:
+    print(math.sqrt(a),end='')
+    print("00")
+else:
+    print(round(math.sqrt(a),3))
 
