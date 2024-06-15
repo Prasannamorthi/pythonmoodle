@@ -1,68 +1,56 @@
-DNA Sequence
+Give a dictionary with value lists, sort the keys by summation of values in value list.
 
-The DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.
+ Input : test_dict = {‘Gfg’ : [6, 7, 4], ‘best’ : [7, 6, 5]}
 
-For example, "ACGAATTCCG" is a DNA sequence.
+Output : {‘Gfg’: 17, ‘best’: 18}
 
-When studying DNA, it is useful to identify repeated sequences within the DNA.
+Explanation : Sorted by sum, and replaced.
 
-Given a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.
+ Input : test_dict = {‘Gfg’ : [8,8], ‘best’ : [5,5]}
 
+Output : {‘best’: 10, ‘Gfg’: 16}
 
+Explanation : Sorted by sum, and replaced.
 
-Example 1:
+ Sample Input:
 
-Input: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
+2
 
-Output: ["AAAAACCCCC","CCCCCAAAAA"]
+Gfg 6 7 4
 
-Example 2:
+Best 7 6 5
 
-Input: s = "AAAAAAAAAAAAA"
+Sample Output
 
-Output: ["AAAAAAAAAA"]
+Gfg 17
+
+Best 18
 
  
-
-
-
-
 
 
 
 For example:
 
 Input	Result
+2
+Gfg 6 7 4
+Best 7 6 5
+Gfg 17
+Best 18
 
-AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT	AAAAACCCCC
-
-CCCCCAAAAA
 
 
 
-s = input()
+test_dict = {}
+n = int(input())
+for _ in range(n):
+    key, *values = input().split()
+    test_dict[key] = list(map(int, values))
 
-j = []
+sorted_keys = [key for key, _ in sorted(test_dict.items(), key=lambda item: sum(item[1]))]
+result_dict = {key: sum(test_dict[key]) for key in sorted_keys}
 
-repeated = set()
-
-for i in range(len(s) - 9):
-
-    sequence = s[i:i+10]
-
-    if sequence in j:
-
-        repeated.add(sequence)
-
-    else:
-
-        j.append(sequence)
-
-l=list(repeated)
-
-l=list(reversed(l))
-
-for i in l:
-
-    print(i)
+for key, value in result_dict.items():
+    print(key, value)
 
