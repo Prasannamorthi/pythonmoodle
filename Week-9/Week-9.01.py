@@ -1,75 +1,51 @@
-Uncommon words
+complete function to implement coin change making problem i.e. finding the minimum
 
-A sentence is a string of single-space separated words where each word consists only of lowercase letters.A word is uncommon if it appears exactly once in one of the sentences, and does not appear in the other sentence.
+number of coins of certain denominations that add up to given amount of money.
 
-Given two sentences s1 and s2, return a list of all the uncommon words. You may return the answer in any order.
+The only available coins are of values 1, 2, 3, 4
 
-Example 1:
+Input Format:
 
-Input: s1 = "this apple is sweet", s2 = "this apple is sour"
+Integer input from stdin.
 
-Output: ["sweet","sour"]
+Output Format:
 
-Example 2:
+return the minimum number of coins required to meet the given target.
+
+Example Input:
+
+16
+
+Output:
+
+4
+
+Explanation:
+
+We need only 4 coins of value 4 each
+
+Example Input:
+
+25
+
+Output:
+
+7
+
+Explanation:
+
+We need 6 coins of 4 value, and 1 coin of 1 value
+
+def coinChange(n):
+    coins = [1, 2, 3, 4]
+    min_coins = [float('inf')] * (n + 1)
+    min_coins[0] = 0
+    for amount in range(1, n + 1):
+        for coin in coins:
+            if amount - coin >= 0:
+               min_coins[amount] = min(min_coins[amount], min_coins[amount - coin] + 1)
+    return min_coins[n]
+ 
 
 
 
-Input: s1 = "apple apple", s2 = "banana"
-
-Output: ["banana"]
-
- Constraints:
-
-1 <= s1.length, s2.length <= 200
-
-s1 and s2 consist of lowercase English letters and spaces.
-
-s1 and s2 do not have leading or trailing spaces.
-
-All the words in s1 and s2 are separated by a single space.
-
-Note:
-
-Use dictionary to solve the problem
-
-For example:
-
-Input	Result
-
-this apple is sweet
-
-this apple is sour
-
-
-
-	sweet sour
-
-
-
-a=input().split()
-
-b=input().split()
-
-c1,c2,l={},{},[]
-
-for i in a:
-
-    c1[i]=c1.get(i,0)+1
-
-for j in b:
-
-    c2[j]=c2.get(j,0)+1
-
-for w,c in c1.items():
-
-    if(c==1 and w not in b):
-
-        l.append(w)
-
-for w,c in c2.items():
-
-    if(c==1 and w not in a):
-
-        l.append(w)
-
-print(*l)
