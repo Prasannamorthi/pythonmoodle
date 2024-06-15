@@ -1,94 +1,82 @@
-Month name to days
+Write a program to find the eligibility of admission for a professional course based on the following criteria:
 
-The length of a month varies from 28 to 31 days. In this exercise you will create a program that reads the name of a month from the user as a string. Then your program should display the number of days in that month. Display “28 or 29 days” for February so that leap years are addressed.
+Marks in Maths >= 65
+
+Marks in Physics >= 55
+
+Marks in Chemistry >= 50
+
+Or
+
+Total in all three subjects >= 180
+
+Sample Test Cases
+
+Test Case 1
+
+Input
+
+70
+
+60
+
+80
+
+Output 
+
+The candidate is eligible
+
+Test Case 2 
+
+Input
+
+50
+
+80
+
+80 
+
+Output
+
+The candidate is eligible
 
 
+Test Case 3
+
+Input
+
+50
+
+60
+
+40
+
+Output
+
+The candidate is not eligible
 
 
-
-Sample Input 1
-
-February
-
-Sample Output 1
-
-February has 28 or 29 days in it.
-
-Sample Input 2
-
-March
-
-Sample Output 2
-
-March has 31 days in it.
-
-Sample Input 3
-
-April
-
-Sample Output 3
-
-April has 30 days in it.
 
 For example:
 
 Input	Result
-
-February	February has 28 or 29 days in it.
-
-March	March has 31 days in it.
-
-
+70
+60
+80
+The candidate is eligible
 
 
 
-m=input()
 
-if(m=="January"):
 
-    print(m,"has 31 days in it.")
 
-elif(m=="February"):
-
-    print(m,"has 28 or 29 days in it.")
-
-elif(m=="March"):
-
-    print(m,"has 31 days in it.")
-
-elif(m=="April"):
-
-    print(m,"has 30 days in it.")
-
-elif(m=="May"):
-
-    print(m,"has 31 days in it.")
-
-elif(m=="June"):
-
-    print(m,"has 30 days in it.")
-
-elif(m=="July"):
-
-    print(m,"has 31 days in it.")
-
-elif(m=="August"):
-
-    print(m,"has 31 days in it.")
-
-elif(m=="September"):
-
-    print(m,"has 30 days in it.")
-
-elif(m=="October"):
-
-    print(m,"has 31 days in it.")
-
-elif(m=="November"):
-
-    print(m,"has 30 days in it.")
-
-elif(m=="December"):
-
-    print(m,"has 31 days in it.")
+a=int(input())
+b=int(input())
+c=int(input())
+if(a>=65 and b>=55 and c>=50):
+    print("The candidate is eligible")
+elif(a+b+c>=180):
+    print("The candidate is eligible")
+else:
+    print("The candidate is not eligible")
 
