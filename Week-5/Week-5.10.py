@@ -1,112 +1,16 @@
-Strictly increasing
-
-Write a Python program to check if a given list is strictly increasing or not. Moreover, If removing only one element from the list results in a strictly increasing list, we still consider the list true
-
-Input:
-
-n : Number of elements
-
-List1: List of values
-
-Output
-
-Print "True" if list is strictly increasing or decreasing else print "False"
+Write a program to check if two strings are balanced. For example, strings s1 and s2 are balanced if all the characters in the s1 are present in s2. The character’s position doesn’t matter. If balanced display as "true" ,otherwise "false".
 
 
+For example:
 
-Sample Test Case
-
-
-
-Input
-
-
-
-7
-
-
-
-1
-
-
-
-2
-
-
-
-3
-
-
-
-0
-
-
-
-4
-
-
-
-5
-
-
-
-6
-
-
-
-Output 
-
-
-
+Input	Result
+Yn
+PYnative
 True
-
-
-
-n= int(input())
-
-arr = [int(input()) for i in range(n)]
-
-l = arr.copy()
-
-g=0
-
-size = len(arr)
-
-arr_asc = sorted(arr)
-
-arr_des = sorted(arr)[::-1]
-
-if arr==arr_asc or arr==arr_des:
-
-    print('True')
-
-    g=1
-
+s1=input()
+s2=input()
+if s1 in s2:
+    print("True")
 else:
-
-    for i in arr:
-
-        l.remove(i)
-
-        arr_asc.remove(i)
-
-        arr_des.remove(i)
-
-        if l==arr_asc or l==arr_des:
-
-        	print('True')
-
-        	g=1
-
-        	break
-
-        l=arr.copy()
-
-        arr_asc = sorted(arr)
-
-        arr_des = sorted(arr)[::-1]
-
-if g==0:
-
-    print('False')
+    print("False")
 
