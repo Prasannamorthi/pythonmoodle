@@ -23,11 +23,8 @@ Input	Result
 
 
 
-
-s=int(input())
-
-da=s*0.4
-
-ha=s*0.2
-
-print(int(s+da+ha))
+a=int(input(""))
+da=a*(40/100)
+ra=a*(20/100)
+d=a+da+ra
+print(int(d)
