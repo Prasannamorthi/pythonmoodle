@@ -1,50 +1,26 @@
-C or D
+Write a program that returns the last digit of the given number. Last digit is being referred to the least significant digit i.e. the digit in the ones (units) place in the given number.
 
-Mr.Ram has been given a problem kindly help him to solve it. The input of the program is either 0 or 1. IF 0 is the input he should display "C" if 1 is the input it should display "D".There is a constraint that Mr. Ram should use either logical operators or arithmetic operators to solve the problem, not anything else.
+The last digit should be returned as a positive number.
 
-Hint:
+For example,
 
-Use ASCII values of C and D.
+if the given number is 197, the last digit is 7
 
-
-
-Input Format:
-
-An integer x, 0<=x<=1. .
-
-Output Format:
-
-output a single character "C" or "D"depending on the value of x.
-
-Input 1:
-
-0
-
-Output 1:
-
-C
+if the given number is -197, the last digit is 7
 
 
 
-Input 2:
+For example:
 
-1
-
-
-
-Output 1:
-
-D
-
+Input	Result
+197
+7
+-197
+7
 
 
 a=int(input())
-
-if(a==0):
-
-    print("C")
-
-else:
-
-    print("D")
+if(a<0):
+    a=a*-1
+print(a%10)
 
