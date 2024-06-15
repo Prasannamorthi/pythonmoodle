@@ -1,108 +1,117 @@
-Chinese Zodiac
+Three numbers form a Pythagorean triple if the sum of squares of two numbers is equal to the square of the third.
 
-The Chinese zodiac assigns animals to years in a 12 year cycle. One 12 year cycle is shown in the table below. The pattern repeats from there, with 2012 being another year of the dragon, and 1999 being another year of the hare.
+For example, 3, 5 and 4 form a Pythagorean triple, since 3*3 + 4*4 = 25 = 5*5
 
-Year Animal
+You are given three integers, a, b, and c. They need not be given in increasing order. If they form a Pythagorean triple, then print "yes", otherwise, print "no". Please note that the output message is in small letters.
 
-2000 Dragon
+Sample Input
 
-2001 Snake
+3
 
-2002 Horse
+5
 
-2003 Sheep
+4
 
-2004 Monkey
+Sample Output
 
-2005 Rooster
+yes
 
-2006 Dog
+Sample Test Cases
 
-2007 Pig
+Test Case 1     
 
-2008 Rat
+Input
 
-2009 Ox
+3
 
-2010 Tiger
+5
 
-2011 Hare
+4
 
-Write a program that reads a year from the user and displays the animal associated with that year. Your program should work correctly for any year greater than or equal to zero, not just the ones listed in the table.
+Output
 
+yes
 
+Test Case 2     
 
-Sample Input 1
+Input
 
-2010
+5
 
-Sample Output 1
+8
 
-2010 is the year of the Tiger.
+2
 
-Sample Input 2
+Output
 
-2020
+noThree numbers form a Pythagorean triple if the sum of squares of two numbers is equal to the square of the third.
 
-Sample Output 2
+For example, 3, 5 and 4 form a Pythagorean triple, since 3*3 + 4*4 = 25 = 5*5
 
-2020 is the year of the Rat.
+You are given three integers, a, b, and c. They need not be given in increasing order. If they form a Pythagorean triple, then print "yes", otherwise, print "no". Please note that the output message is in small letters.
 
+Sample Input
+
+3
+
+5
+
+4
+
+Sample Output
+
+yes
+
+Sample Test Cases
+
+Test Case 1     
+
+Input
+
+3
+
+5
+
+4
+
+Output
+
+yes
+
+Test Case 2     
+
+Input
+
+5
+
+8
+
+2
+
+Output
+
+no
 
 
 
 
 a=int(input())
-
-b=a%100
-
-c=b%12
-
-if(c==0):
-
-    print(a,"is the year of the Dragon.")
-
-elif(c==1):
-
-    print(a,"is the year of the Snake.")
-
-elif(c==2):
-
-    print(a,"is the year of the Horse.")
-
-elif(c==3):
-
-    print(a,"is the year of the Sheep.")
-
-elif(c==4):
-
-    print(a,"is the year of the Monkey.")
-
-elif(c==5):
-
-    print(a,"is the year of the Rooster.")
-
-elif(c==6):
-
-    print(a,"is the year of the Dog.")
-
-elif(c==7):
-
-    print(a,"is the year of the Pig.")
-
-elif(c==8):
-
-    print(a,"is the year of the Rat.")
-
-elif(c==9):
-
-    print(a,"is the year of the Ox.")
-
-elif(c==10):
-
-    print(a,"is the year of the Tiger.")
-
-elif(c==11):
-
-    print(a,"is the year of the Hare.")
+b=int(input())
+c=int(input())
+x=a*a
+y=b*b
+z=c*c
+if(x+y==z or x+z==y or z+y==x):
+    print("yes")
+else:
+    print("no")a=int(input())
+b=int(input())
+c=int(input())
+x=a*a
+y=b*b
+z=c*c
+if(x+y==z or x+z==y or z+y==x):
+    print("yes")
+else:
+    print("no")
 
