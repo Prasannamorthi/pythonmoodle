@@ -1,31 +1,25 @@
-Widgets and Gizmos
-
-An online retailer sells two products: widgets and gizmos. Each widget weighs 75 grams. Each gizmo weighs 112 grams. Write a program that reads the number of widgets and the number of gizmos from the user. Then your program should compute and display the total weight of the parts.
-
-
+The program that you create for this exercise will begin by reading the cost of a meal ordered at a restaurant from the user. Then your program will compute the tax and tip for the meal. Use your local tax rate (5 percent) when computing the amount of tax owing. Compute the tip as 18 percent of the meal amount (without the tax). The output from your program should include the tax amount, the tip amount, and the grand total for the meal including both the tax and the tip. Format the output so that all of the values are displayed using two decimal places.
 
 Sample Input
 
-10
-
-20
+100
 
 Sample Output
 
-The total weight of all these widgets and gizmos is 2990 grams.
+The tax is 5.00 and the tip is 18.00, making the total 123.00
+
+
 
 For example:
 
 Input	Result
+100
+The tax is 5.00 and the tip is 18.00, making the total 123.00
 
-10
-
-20	The total weight of all these widgets and gizmos is 2990 grams.
-
-a=int(input())
-
-b=int(input())
-
-print("The total weight of all these widgets and gizmos is",((a*75)+(b*112)),"grams.")
+a=float(input())
+b=0.05*a
+c=0.18*a
+d=a+b+c
+print(f"The tax is {b:.2f} and the tip is {c:.2f}, making the total {d:.2f}")
 
 
