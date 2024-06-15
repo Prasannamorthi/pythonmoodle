@@ -1,71 +1,33 @@
-Abundant Number
+Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.There is only one repeated number in nums, return this repeated number. Solve the problem using set.
 
-An abundant number is a number for which the sum of its proper divisors is greater than the number itself. Proper divisors of the number are those that are strictly lesser than the number.
+Example 1:
 
+Input: nums = [1,3,4,2,2]
+Output: 2
+Example 2:
 
-
-Input Format:
-
-Take input an integer from stdin
-
-Output Format:
-
-Return Yes if given number is Abundant. Otherwise, print No
-
-Example input:
-
-12
-
-Output:
-
-Yes
-
-Explanation
-
-The proper divisors of 12 are: 1, 2, 3, 4, 6, whose sum is 1 + 2 + 3 + 4 + 6 = 16. Since sum of proper divisors is greater than the given number, 12 is an abundant number.
-
-Example input:
-
-13
-
-Output:
-
-No
-
-Explanation
-
-The proper divisors of 13 is: 1, whose sum is 1. Since sum of proper divisors is not greater than the given number, 13 is not an abundant number.
-
+Input: nums = [3,1,3,4,2]
+Output: 3
 
 
 For example:
 
-Test				Result
+Input	Result
+1 3 4 4 2
+4
 
-print(abundant(12))		Yes
+def find_duplicate(nums):
+    seen = set()
+    for num in nums:
+        if num in seen:
+            return num
+        seen.add(num)
 
-print(abundant(13))		No
+# Input
+l = input()
+nums = list(map(int, l.split()))
 
-def abundant(n):
-
-    l,s=[],0
-
-    for i in range(1,int(n//2)+1):
-
-        if(n%i==0):
-
-            l.append(i)
-
-    for i in l:
-
-        s+=i
-
-    if(s>n):
-
-        return("Yes")
-
-    else:
-
-        return("No")
+# Output
+print(find_duplicate(nums))
 
 
