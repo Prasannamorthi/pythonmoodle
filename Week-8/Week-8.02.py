@@ -1,34 +1,71 @@
-Check Pair
+Create a student dictionary  for n students with the student name as key and their test mark assignment mark and lab mark as values. Do the following computations and display the result.
 
-Given a tuple and a positive integer k, the task is to find the count of distinct pairs in the tuple whose sum is equal to K.
+1.Identify the student with the  highest average score
 
-Examples:
+2.Identify the student who as the highest Assignment marks
 
-Input: t = (5, 6, 5, 7, 7, 8 ), K = 13 
+3.Identify the student with the Lowest lab marks
 
-Output: 2 
+4.Identify the student with the lowest average score
 
-Explanation: 
+Note:
 
-Pairs with sum K( = 13) are  {(5, 8), (6, 7), (6, 7)}. 
-
-Therefore, distinct pairs with sum K( = 13) are { (5, 8), (6, 7) }. 
-
-Therefore, the required output is 2.
+If more than one student has the same score display all the student names
 
 
 
-For example:
+Sample input:
 
-Input	Result
+4
 
-1,2,1,2,5
+James 67 89 56
 
-3	1
+Lalith 89 45 45
 
-1,2
+Ram 89 89 89
 
-0	0
+Sita 70 70 70
+
+Sample Output:
+
+Ram
+
+James Ram
+
+Lalith
+
+Lalith
+
+
+
+
+
+
+
+
+n = int(input())
+s = {}
+for _ in range(n):
+    data = input().split()
+    name = data[0]
+    tm, am, l = map(int, data[1:]) 
+    s[name] = (tm, am, l)
+a = {name: sum(marks) / len(marks) for name, marks in s.items()}
+h = max(a.values())
+hs = sorted([name for name, score in a.items() if score == h])
+m = max([marks[1] for marks in s.values()])
+ass = sorted([name for name, marks in s.items() if marks[1] == m])
+lm = min([marks[2] for marks in s.values()])
+ls = sorted([name for name, marks in s.items() if marks[2] == lm])
+avgs = min(a.values())
+ags = sorted([name for name, score in a.items() if score == avgs])
+print("\n".join([
+    " ".join(hs),
+    " ".join(ass),
+    " ".join(ls),
+    " ".join(ags)
+]))
+
 
 
 
