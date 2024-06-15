@@ -1,19 +1,37 @@
-Tax and Tip
-
-The program that you create for this exercise will begin by reading the cost of a meal ordered at a restaurant from the user. Then your program will compute the tax and tip for the meal. Use your local tax rate (5 percent) when computing the amount of tax owing. Compute the tip as 18 percent of the meal amount (without the tax). The output from your program should include the tax amount, the tip amount, and the grand total for the meal including both the tax and the tip. Format the output so that all of the values are displayed using two decimal places.
+Write a python program that takes a integer between 0 and 15 as input and displays the number of '1' s in its binary form.(Hint:use python bitwise operator.
 
 Sample Input
 
-100
+3
 
-Sample Output
+Sample Output:
 
-The tax is 5.00 and the tip is 18.00, making the total 123.00
+2
+
+Explanation:
+
+The binary representation of 3 is 011, hence there are 2 ones in it. so the output is 2.
+
+
+For example:
+
+Input	Result
+3
+2
 
 
 
 
-
-a=int(input())
-
-print("The tax is {:.2f} and the tip is {:.2f}, making the total {:.2f}".format((a*0.05),(a*0.18),(a+((a*0.05)+(a*0.18)))))
+def count_ones_in_binary(number):
+    count = 0
+    while number > 0:
+        if number & 1:
+            count += 1
+        number >>= 1
+    return count
+number = int(input(""))
+if 0 <= number <= 15:
+    ones = count_ones_in_binary(number)
+    print(f"{ones}")
+else:
+    print(f"Invalid input: {number} is not between 0 and 15.")
