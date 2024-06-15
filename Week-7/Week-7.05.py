@@ -1,82 +1,54 @@
-Coin Change
+The DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.
 
-complete function to implement coin change making problem i.e. finding the minimum
+For example, "ACGAATTCCG" is a DNA sequence.
+When studying DNA, it is useful to identify repeated sequences within the DNA.
 
-number of coins of certain denominations that add up to given amount of money.
+Given a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.
 
-The only available coins are of values 1, 2, 3, 4
+ 
 
-Input Format:
+Example 1:
 
-Integer input from stdin.
+Input: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
+Output: ["AAAAACCCCC","CCCCCAAAAA"]
+Example 2:
 
-Output Format:
-
-return the minimum number of coins required to meet the given target.
-
-Example Input:
-
-16
-
-Output:
-
-4
-
-Explanation:
-
-We need only 4 coins of value 4 each
-
-Example Input:
-
-25
-
-Output:
-
-7
-
-Explanation:
-
-We need 6 coins of 4 value, and 1 coin of 1 value
+Input: s = "AAAAAAAAAAAAA"
+Output: ["AAAAAAAAAA"]
+ 
 
 
 
-def coinChange(amount):
+For example:
 
-    # Available coin denominations
+Input	Result
+AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT
+AAAAACCCCC
+CCCCCAAAAA
 
-    coins = [1, 2, 3, 4]
 
-    # Initialize a list to store the minimum number of coins for each amount from 0 to the target amount
+def findRepeatedDnaSequences(s):
+    if len(s) < 10:
+        return []
 
-    dp = [float('inf')] * (amount + 1)
+    sequences = {}
+    result = []
 
-    dp[0] = 0  # Base case: 0 coins needed to make amount 0
+    for i in range(len(s) - 9):
+        substring = s[i:i+10]
+        if substring in sequences:
+            sequences[substring] += 1
+        else:
+            sequences[substring] = 1
 
-   
+    for sequence, count in sequences.items():
+        if count > 1:
+            result.append(sequence)
+    for i in result:
+        print(i)
 
-    # Iterate through all amounts from 1 to the target amount
+s1=input()
 
-    for i in range(1, amount + 1):
+findRepeatedDnaSequences(s1)
 
-        # Iterate through all available coin denominations
-
-        for coin in coins:
-
-        	# If the current coin denomination is less than or equal to the current amount
-
-        	if coin <= i:
-
-            	# Update dp[i] to be the minimum between its current value and dp[i - coin] + 1
-
-            	dp[i] = min(dp[i], dp[i - coin] + 1)
-
-   
-
-    # The result is stored at dp[amount]
-
-    return dp[amount]
-
-    amount = int(input())
-
-    print(coinChange(amount))
 
