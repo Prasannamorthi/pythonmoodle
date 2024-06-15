@@ -1,113 +1,51 @@
-Merge Two Sorted Arrays Without Duplication
-
-Output is a merged array without duplicates.
-
-Input Format
-
-N1 - no of elements in array 1
-
-Array elements for array 1
-
-N2 - no of elements in array 2
-
-Array elements for array2
-
-Output Format
-
-Display the merged array
+Robert  is having 2 strings consist of uppercase & lowercase english letters. Now he want to compare those two strings lexicographically. The letters' case does not matter, that is an uppercase letter is considered equivalent to the corresponding lowercase letter.
 
 
+Input
+The first line contains T. Then T test cases follow.
 
-Sample Input 1
+Each test case contains a two lines contains a string. The strings' lengths range from 1 to 100 inclusive. It is guaranteed that the strings are of the same length and also consist of uppercase and lowercase Latin letters.
 
+Output
+If the first string is less than the second one, print "-1".
+If the second string is less than the first one, print "1".
+If the strings are equal, print "0".
+Note that the letters' case is not taken into consideration when the strings are compared.
 
+Constraints
+                      1≤T≤50
+                      String length≤100
 
-5
+For example:
 
-1 
-
-2 
-
-3 
-
-6 
-
-9
-
-4
-
-2 
-
-4 
-
-5 
-
-10
+Input	Result
+3
+aaaa
+aaaA
+abs
+Abz
+abcdefg
+AbCdEfF
+0
+-1
+1
 
 
 
-Sample Output 1
+def compare_strings_lexicographically():
+    T = int(input())  # Number of test cases
+    for _ in range(T):
+        string1 = input().lower()
+        string2 = input().lower()
 
+        if string1 < string2:
+            print("-1")
+        elif string1 > string2:
+            print("1")
+        else:
+            print("0")
 
-
-1 2 3 4 5 6 9 10
-
-
-
-def merge_arrays_without_duplicates(arr1, arr2):
-
-    # Combine the arrays and convert to a set to remove duplicates
-
-    result_set = set(arr1 + arr2)
-
-    # Convert the set back to a sorted list
-
-    merged_sorted_array = sorted(result_set)
-
-    return merged_sorted_array
-
- 
-
-# Input read and processing
-
-def process_input():
-
-    # Reading number of elements and the elements for the first array
-
-    n1 = int(input())
-
-    array1 = []
-
-    for _ in range(n1):
-
-        element = int(input())
-
-        array1.append(element)
-
- 
-
-    # Reading number of elements and the elements for the second array
-
-    n2 = int(input())
-
-    array2 = []
-
-    for _ in range(n2):
-
-        element = int(input())
-
-        array2.append(element)
-
- 
-
-    # Merge the arrays without duplicates
-
-    result = merge_arrays_without_duplicates(array1, array2)
-
- 
-
-    # Print the result
-
-    print(" ".join(map(str, result)))
+# Call the function
+compare_strings_lexicographically()
 
 
