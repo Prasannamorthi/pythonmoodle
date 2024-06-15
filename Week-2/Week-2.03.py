@@ -1,48 +1,35 @@
-Birthday Party
+In London, every year during Dasara there will be a very grand doll show. People try to invent new dolls of different varieties. The best-sold doll's creator will be awarded with a cash prize. So people broke their heads to create dolls innovatively. Knowing this competition, Mr.Lokpaul tried to create a doll that sings only when an even number is pressed and the number should not be zero and greater than 100.
 
-Mr. X's birthday is in next month. This time he is planning to invite N of his friends. He wants to distribute some chocolates to all of his friends after the party. He went to a shop to buy a packet of chocolates. At the chocolate shop, 4 packets are there with different numbers of chocolates. He wants to buy such a packet which contains a number of chocolates, which can be distributed equally among all of his friends. Help Mr. X to buy such a packet.
+ IF Lokpaul wins print true, otherwise false.
+
+Sample Input
+
+10
+
+Sample Output
+
+True
+
+Explanation:
+
+Since 10 is an even number and a number between 0 and 100, True is printed
 
 
 
-Input Given: 
+For example:
 
-N-No of friends
-
-P1,P2,P3 AND P4-No of chocolates
-
-OUTPUT:
-
- "True" if he can buy that packet and "False" if he can't buy that packet.
-
-SAMPLE INPUT AND OUTPUT:
-
-5
-
-25
-
-12  
-
-10  
-
-9
-
-OUTPUT
-
-True False True False
-
+Input	Result
+101
+False
 
 
 
 
 a=int(input())
-
-b=int(input())
-
-c=int(input())
-
-d=int(input())
-
-e=int(input())
-
-print(b%a==0,c%a==0,d%a==0,e%a==0)
+if(a>=0 and a<=100):
+    if(a%2==0):
+        print("True")
+else:
+    
+    print("False")
 
