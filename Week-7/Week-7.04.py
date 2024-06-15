@@ -1,57 +1,55 @@
-Given a tuple and a positive integer k, the task is to find the count of distinct pairs in the tuple whose sum is equal to K.
+The DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.
 
-Examples:
+For example, "ACGAATTCCG" is a DNA sequence.
+When studying DNA, it is useful to identify repeated sequences within the DNA.
 
-Input: t = (5, 6, 5, 7, 7, 8 ), K = 13 
-Output: 2 
-Explanation: 
-Pairs with sum K( = 13) are  {(5, 8), (6, 7), (6, 7)}. 
-Therefore, distinct pairs with sum K( = 13) are { (5, 8), (6, 7) }. 
-Therefore, the required output is 2.
+Given a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
+Output: ["AAAAACCCCC","CCCCCAAAAA"]
+Example 2:
+
+Input: s = "AAAAAAAAAAAAA"
+Output: ["AAAAAAAAAA"]
+ 
 
 
 
 For example:
 
 Input	Result
-1,2,1,2,5
-3
-1
-1,2
-0
-0
+AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT
+AAAAACCCCC
+CCCCCAAAAA
 
 
-def find_pairs_with_sum(numbers, target_sum):
-    # Convert the tuple to a list to enable mutability
-    numbers_list = list(numbers)
-    
-    # Create a set to store the pairs
-    pairs = set()
-    
-    # Create a set to store the visited numbers
-    visited = set()
-    
-    for number in numbers_list:
-        complement = target_sum - number
-        if complement in visited:
-            # To ensure pairs are stored in a consistent order (e.g., (small, large))
-            pair = tuple(sorted((number, complement)))
-            pairs.add(pair)
-        visited.add(number)
-    
-    return pairs
+def findRepeatedDnaSequences(s):
+    if len(s) < 10:
+        return []
 
-# Taking input from the user
-numbers_input = input("")
-target_sum = int(input(""))
+    sequences = {}
+    result = []
 
-# Convert the input string to a tuple of integers
-numbers = tuple(map(int, numbers_input.split(',')))
+    for i in range(len(s) - 9):
+        substring = s[i:i+10]
+        if substring in sequences:
+            sequences[substring] += 1
+        else:
+            sequences[substring] = 1
 
-# Find pairs
-pairs = find_pairs_with_sum(numbers, target_sum)
+    for sequence, count in sequences.items():
+        if count > 1:
+            result.append(sequence)
+    for i in result:
+        print(i)
 
-print(f"{len(pairs)}")
+s1=input()
+
+findRepeatedDnaSequences(s1)
+
 
          
