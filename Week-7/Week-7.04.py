@@ -1,30 +1,26 @@
-The DNA sequence is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T'.
+Given a tuple and a positive integer k, the task is to find the count of distinct pairs in the tuple whose sum is equal to K.
 
-For example, "ACGAATTCCG" is a DNA sequence.
-When studying DNA, it is useful to identify repeated sequences within the DNA.
+Examples:
 
-Given a string s that represents a DNA sequence, return all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule. You may return the answer in any order.
-
- 
-
-Example 1:
-
-Input: s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
-Output: ["AAAAACCCCC","CCCCCAAAAA"]
-Example 2:
-
-Input: s = "AAAAAAAAAAAAA"
-Output: ["AAAAAAAAAA"]
- 
+Input: t = (5, 6, 5, 7, 7, 8 ), K = 13 
+Output: 2 
+Explanation: 
+Pairs with sum K( = 13) are  {(5, 8), (6, 7), (6, 7)}. 
+Therefore, distinct pairs with sum K( = 13) are { (5, 8), (6, 7) }. 
+Therefore, the required output is 2.
 
 
 
 For example:
 
 Input	Result
-AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT
-AAAAACCCCC
-CCCCCAAAAA
+1,2,1,2,5
+3
+1
+1,2
+0
+0
+
 
 
 def findRepeatedDnaSequences(s):
