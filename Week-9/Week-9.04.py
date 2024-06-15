@@ -1,124 +1,33 @@
-Student Record
+An automorphic number is a number whose square ends with the number itself.
 
+For example, 5 is an automorphic number because 5*5 =25. The last digit is 5 which same
 
+as the given number.
 
-Create a student dictionary  for n students with the student name as key and their test mark assignment mark and lab mark as values. Do the following computations and display the result.
+If the number is not valid, it should display “Invalid input”.
 
-1.Identify the student with the  highest average score
+If it is an automorphic number display “Automorphic” else display “Not Automorphic”.
 
-2.Identify the student who as the highest Assignment marks
+Input Format:
 
-3.Identify the student with the Lowest lab marks
+Take a Integer from Stdin Output Format: Print Automorphic if given number is Automorphic number,otherwise Not Automorphic Example input: 5 Output: Automorphic Example input: 25 Output: Automorphic Example input: 7 Output: Not Automorphic
 
-4.Identify the student with the lowest average score
+For example:
 
-Note:
+Test	Result
+print(automorphic(5))
+Automorphic
 
-If more than one student has the same score display all the student names
 
 
-
-Sample input:
-
-4
-
-James 67 89 56
-
-Lalith 89 45 45
-
-Ram 89 89 89
-
-Sita 70 70 70
-
-Sample Output:
-
-Ram
-
-James Ram
-
-Lalith
-
-Lalith
-
-
-
-n = int(input())
-
-max_average = float('-inf')
-
-min_average = float('inf')
-
-max_assignment = float('-inf')
-
-min_lab = float('inf')
-
-max_average_students = []
-
-max_assignment_students = []
-
-min_lab_students = []
-
-min_average_students = []
-
-for _ in range(n):
-
-    name, test, assignment, lab = input().split()
-
-    test = int(test)
-
-    assignment = int(assignment)
-
-    lab = int(lab)
-
-    average = (test + assignment + lab) / 3
-
-    if average > max_average:
-
-        max_average = average
-
-        max_average_students = [name]
-
-    elif average == max_average:
-
-        max_average_students.append(name)
-
-    if average < min_average:
-
-        min_average = average
-
-        min_average_students = [name]
-
-    elif average == min_average:
-
-        min_average_students.append(name)
-
-    if assignment > max_assignment:
-
-        max_assignment = assignment
-
-        max_assignment_students = [name]
-
-    elif assignment == max_assignment:
-
-        max_assignment_students.append(name)
-
-    if lab < min_lab:
-
-        min_lab = lab
-
-        min_lab_students = [name]
-
-    elif lab == min_lab:
-
-        min_lab_students.append(name)
-
-print(*sorted(max_average_students))
-
-print(*sorted(max_assignment_students))
-
-print(*sorted(min_lab_students))
-
-print(*sorted(min_average_students))
-
+def automorphic(n):
+    sq = n ** 2
+    ld = sq % (10 ** len(str(n)))
+    if n == ld:
+        return "Automorphic"
+    else:
+        return "Not Automorphic"
+     
+    
 
 
